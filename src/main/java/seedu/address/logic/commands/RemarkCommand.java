@@ -1,13 +1,50 @@
 package seedu.address.logic.commands;
 
+import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
+
+import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
 
 /**
  * Changes the remark of an existing person in the address book.
  */
 public class RemarkCommand extends Command {
+
+    public static final String MESSAGE_ARGUMENTS = "Index: %1$d, Remark: %2$s";
+
+    private final Index index;
+    private final String remark;
+
+    public RemarkCommand(Index index, String remark) {
+        requireAllNonNull(index, remark);
+
+        this.index = index;
+        this.remark = remark;
+    }
+    @Override
+    public CommandResult execute(Model model) throws CommandException {
+        throw new CommandException(String.format(MESSAGE_ARGUMENTS, index.getOneBased(), remark));
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        // short circuit if same object
+        if (other == this) {
+            return true;
+        }
+
+        // instanceof handles nulls
+        if (!(other instanceof RemarkCommand)) {
+            return false;
+        }
+
+        // state check
+        RemarkCommand e = (RemarkCommand) other;
+        return index.equals(e.index)
+                && remark.equals(e.remark);
+    }
 
     public static final String COMMAND_WORD = "remark";
 
@@ -21,9 +58,5 @@ public class RemarkCommand extends Command {
 
     public static final String MESSAGE_NOT_IMPLEMENTED_YET = "Remark command not implemented yet";
 
-    @Override
-    public CommandResult execute(Model model) throws CommandException {
-        return new CommandResult("Hello from remark");
-    }
 
 }
