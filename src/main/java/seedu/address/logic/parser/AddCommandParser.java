@@ -48,6 +48,8 @@ public class AddCommandParser implements Parser<AddCommand> {
             address = ParserUtil.parseAddress(argMultimap.getValue(PREFIX_ADDRESS).get());
         }
 
+        // todo create test case for add command
+        // todo update the Ui to make add command optional.
         Set<Tag> tagList = ParserUtil.parseTags(argMultimap.getAllValues(PREFIX_TAG));
 
         Person person = new Person(name, phone, email, address, tagList);

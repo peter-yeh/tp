@@ -74,6 +74,7 @@ public class AddCommandParserTest {
                 + TAG_DESC_HUSBAND + TAG_DESC_FRIEND, new AddCommand(expectedPersonMultipleTags));
     }
 
+    // todo add test case to check for optional field such as address
     @Test
     public void parse_optionalFieldsMissing_success() {
         // zero tags
