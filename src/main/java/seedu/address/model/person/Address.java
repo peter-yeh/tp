@@ -31,6 +31,13 @@ public class Address {
     }
 
     /**
+     * Constructs an address without value
+     */
+    public Address() {
+        value = "";
+    }
+
+    /**
      * Returns true if a given string is a valid email.
      */
     public static boolean isValidAddress(String test) {
