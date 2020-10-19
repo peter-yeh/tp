@@ -1,6 +1,10 @@
 package seedu.address.logic.commands.itineraryattraction;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_ATTRACTION;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_DAY_VISITING;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_END_TIME;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_START_TIME;
 
 import java.util.List;
 
@@ -23,12 +27,13 @@ public class AddItineraryAttractionCommand extends Command {
     public static final String COMMAND_WORD = "add itinerary attraction";
 
     // todo copy test case from AddCommand
-    // todo update the usage message
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds an attraction identified by the index number used"
             + " in the displayed attraction list to the itinerary identified by the the index number used in the"
             + " displayed itinerary list.\n "
-            + "Parameters: ATTRACTIONINDEX ITINERARYINDEX (must be a positive integer) "
-            + "Example: " + COMMAND_WORD + " 1 1";
+            + "Parameters: " + PREFIX_ATTRACTION + "ATTRACTION " + PREFIX_START_TIME + "START TIME "
+            + PREFIX_END_TIME + "END TIME " + PREFIX_DAY_VISITING + "DAY VISITING "
+            + "Example: " + COMMAND_WORD + " " + PREFIX_ATTRACTION + "Singapore Zoo " + PREFIX_START_TIME + "1000 "
+            + PREFIX_END_TIME + "1600 " + PREFIX_DAY_VISITING + "3";
 
     public static final String MESSAGE_ADD_ATTRACTION_SUCCESS = "Added Attraction: %1$s to Itinerary: %1$s";
     public static final String MESSAGE_DUPLICATE_ATTRACTION = "This attraction already exists in the itinerary.";
