@@ -57,7 +57,7 @@ The *Sequence Diagram* below shows how the components interact with each other f
 
 The sections below give more details of each component.
 
-### UI component
+### 2.2 UI component
 
 ![Structure of the UI Component](images/UiClassDiagram.png)
 
@@ -76,7 +76,7 @@ The `UI` component,
 ### 2.3 Logic component
 
 ![Structure of the Logic Component](images/LogicClassDiagram.png)
-<div align="left"><sup>Figure 2.3.1 Logic Class Diagram</sup></div>
+<div><sup>Figure 2.3.1 Structure of the Logic Component, Logic Class Diagram</sup></div><br>
 
 **API** :
 [`Logic.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/logic/Logic.java)
@@ -90,6 +90,7 @@ The `UI` component,
 Given below is the Sequence Diagram for interactions within the `Logic` component for the `execute("delete-attraction 1")` API call.
 
 ![Interactions Inside the Logic Component for the `delete-attraction 1` Command](images/DeleteSequenceDiagram.png)
+<div><sup>Figure 2.3.2 Interactions Inside the Logic Component for the `delete-attraction 1` Command</sup></div><br>
 
 <div markdown="span" class="alert alert-info">:information_source: **Note:** The lifeline for `DeleteCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 </div>
