@@ -135,6 +135,7 @@ public class EditItineraryAttractionCommand extends Command {
                 updatedRating, updatedVisited, updatedTags), startTime, endTime);
     }
 
+
     @Override
     public boolean equals(Object other) {
         // short circuit if same object
