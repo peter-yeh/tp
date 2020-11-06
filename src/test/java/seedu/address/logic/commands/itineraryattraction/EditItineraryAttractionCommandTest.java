@@ -12,7 +12,6 @@ import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND;
 import static seedu.address.testutil.TypicalIndexes.INDEX_THIRD;
 
 import java.nio.file.Path;
-import java.util.Arrays;
 import java.util.function.Predicate;
 
 import org.junit.jupiter.api.Test;
@@ -32,7 +31,6 @@ import seedu.address.model.attraction.Attraction;
 import seedu.address.model.itinerary.Day;
 import seedu.address.model.itinerary.Itinerary;
 import seedu.address.model.itinerary.ItineraryAttraction;
-import seedu.address.model.itinerary.ItineraryTime;
 import seedu.address.testutil.AttractionBuilder;
 import seedu.address.testutil.EditItineraryAttractionDescriptorBuilder;
 import seedu.address.testutil.ItineraryAttractionBuilder;
@@ -177,14 +175,13 @@ public class EditItineraryAttractionCommandTest {
         ModelStubWithItinerarySelected model = new ModelStubWithItinerarySelected(new ItineraryBuilder()
                 .withItineraryAttraction(validIa, day).build());
 
-        CommandResult commandResult = new EditItineraryAttractionCommand(index, day, descriptor).execute(model);
+        CommandResult commandResult = new EditItineraryAttractionCommand(index, day, tDescriptor).execute(model);
 
         // expected
         ItineraryAttraction eItineraryAttraction = new ItineraryAttractionBuilder().withEndTime("2359").build();
 
-        assertEquals(String.format(EditItineraryAttractionCommand.MESSAGE_EDIT_ATTRACTION_SUCCESS, eItineraryAttraction),
-                commandResult.getFeedbackToUser());
-//        assertEquals(Arrays.asList(validIa), model.getDay(INDEX_FIRST).getItineraryAttractions());
+        assertEquals(String.format(EditItineraryAttractionCommand.MESSAGE_EDIT_ATTRACTION_SUCCESS,
+                eItineraryAttraction), commandResult.getFeedbackToUser());
     }
 
     /**
